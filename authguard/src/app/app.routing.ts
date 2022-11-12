@@ -25,6 +25,10 @@ export const AppRoutes: Routes = [
                 component: TaskboardComponent,
                 data: {
                     title: 'Taskboard',
+                    urls: [
+                        { title: 'Dashboard', url: '/dashboard' },
+                        { title: 'Taskboard' }
+                    ]
                 }
             },
             {
@@ -32,6 +36,10 @@ export const AppRoutes: Routes = [
                 component: LeaderboardComponent,
                 data: {
                     title: 'Leaderboard',
+                    urls: [
+                        { title: 'Dashboard', url: '/dashboard' },
+                        { title: 'Leaderboards' }
+                    ]
                 }
             },
             {
@@ -39,13 +47,22 @@ export const AppRoutes: Routes = [
                 component: ProjectComponent,
                 data: {
                     title: 'Project',
+                    urls: [
+                        { title: 'Dashboard', url: '/dashboard' },
+                        { title: 'Project' }
+                    ]
                 }
             },
             {
                 path: 'collaborator',
                 component: CollaboratorComponent,
                 data: {
-                    title: 'Colaborator',
+                    //title: 'Colaborator',
+                    title: 'Colaborator List',
+                    urls: [
+                        { title: 'Dashboard', url: '/dashboard' },
+                        { title: 'Collaborator List' }
+                    ]
                 }
             },
             {

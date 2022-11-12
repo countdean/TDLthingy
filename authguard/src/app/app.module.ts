@@ -38,7 +38,11 @@ import { DashboardsRoutes } from './dashboard/dashboard.routing';
 import { ChartistModule } from 'ng-chartist';
 import { ChartsModule } from 'ng2-charts';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { CollaboratorDialogContent } from './collaborator/collaborator.component';
 
+//import { MatDialog } from '@angular/material/dialog';
 
 import {
   TopCardComponent,
@@ -60,8 +64,13 @@ import {
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ProjectComponent } from './project/project.component';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
-import { RankingComponent } from './leaderboard/leaderboard-component/ranking/ranking.component';
 
+import { AddComponent } from './collaborator/add/add.component';
+import { TasklistComponent } from './dashboard/dashboard-components/tasklist/tasklist.component';
+import { TaskDialogContent } from './dashboard/dashboard-components/tasklist/tasklist.component';
+import { EmprankingComponent } from './leaderboard/leaderboard-component/empranking/empranking.component';
+import { CdkTableModule } from '@angular/cdk/table';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
@@ -106,7 +115,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LeaderboardComponent,
     ProjectComponent,
     CollaboratorComponent,
-    RankingComponent
+    AddComponent,
+    CollaboratorDialogContent,
+    TasklistComponent,
+    TaskDialogContent,
+    EmprankingComponent
+  ],
+  entryComponents: [
+    TaskDialogContent
   ],
   imports: [
     BrowserModule,
@@ -124,6 +140,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ChartistModule,
     ChartsModule,
     NgApexchartsModule,
+    CommonModule,
+    CdkTableModule,
+    NgxChartsModule,
 
     HttpClientModule,
     TranslateModule.forRoot({
@@ -137,11 +156,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   providers: [
     AuthGuard,
+    DatePipe,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     }
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

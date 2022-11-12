@@ -14,3 +14,4 @@ export { SalesYearlyComponent } from './sales-yearly/sales-yearly.component';
 export { ContactListComponent } from './contact-list/contact-list.component';
 export { CommentsComponent } from './comments/comments.component';
 export { MessageComponent } from './message/message.component';
+export { TasklistComponent } from './tasklist/tasklist.component';
